@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using CursoOrientacaoObjetos.Models;
 using Microsoft.AspNetCore.Mvc;
-using CursoOrientacaoObjetos.Models;
+using System.Diagnostics;
 
 namespace CursoOrientacaoObjetos.Controllers
 {
