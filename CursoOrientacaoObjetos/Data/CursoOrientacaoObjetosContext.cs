@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CursoOrientacaoObjetos.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CursoOrientacaoObjetos.Data
 {
@@ -9,6 +10,8 @@ namespace CursoOrientacaoObjetos.Data
         {
         }
 
-        public DbSet<CursoOrientacaoObjetos.Models.Department> Department { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<SalesRecord> SalesRecord { get; set; }
+        public DbSet<Seller> Seller { get; set; }
     }
 }
