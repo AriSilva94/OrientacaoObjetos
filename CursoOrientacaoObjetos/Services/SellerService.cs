@@ -1,5 +1,6 @@
 ﻿using CursoOrientacaoObjetos.Data;
 using CursoOrientacaoObjetos.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,7 +28,7 @@ namespace CursoOrientacaoObjetos.Services
 
         public Seller FindById(int id)
         {
-            return _context.Seller.FirstOrDefault(s => s.Id == id);
+            return _context.Seller.Include(s => s.Department).FirstOrDefault(s => s.Id == id);
         }
 
         public void Remove(int id)
