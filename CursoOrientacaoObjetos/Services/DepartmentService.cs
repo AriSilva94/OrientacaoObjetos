@@ -5,24 +5,18 @@ using System.Linq;
 
 namespace CursoOrientacaoObjetos.Services
 {
-    public class SellerService
+    public class DepartmentService
     {
         private readonly CursoOrientacaoObjetosContext _context;
 
-        public SellerService(CursoOrientacaoObjetosContext context)
+        public DepartmentService(CursoOrientacaoObjetosContext context)
         {
             _context = context;
         }
 
-        public List<Seller> FindAll()
+        public List<Department> FindAll()
         {
-            return _context.Seller.ToList();
-        }
-
-        public void Insert(Seller seller)
-        {
-            _context.Seller.Add(seller);
-            _context.SaveChanges();
+            return _context.Department.OrderBy(d => d.Name).ToList();
         }
     }
 }
