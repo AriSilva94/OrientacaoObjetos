@@ -21,6 +21,8 @@ namespace CursoOrientacaoObjetos.Services
 
         public void Insert(Seller seller)
         {
+            seller.Department = _context.Department.FirstOrDefault();
+
             _context.Seller.Add(seller);
 
             _context.SaveChanges();
