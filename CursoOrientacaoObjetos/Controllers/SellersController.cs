@@ -1,4 +1,5 @@
-﻿using CursoOrientacaoObjetos.Services;
+﻿using CursoOrientacaoObjetos.Models;
+using CursoOrientacaoObjetos.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CursoOrientacaoObjetos.Controllers
@@ -16,6 +17,20 @@ namespace CursoOrientacaoObjetos.Controllers
             var list = _sellerService.FindAll();
 
             return View(list);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
